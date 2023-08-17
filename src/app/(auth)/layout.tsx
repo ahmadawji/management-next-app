@@ -3,9 +3,7 @@ import "@/styles/global.css";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
-const inter = Inter({
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function AuthRootLayout({ children }: { children: ReactNode }) {
   return (
