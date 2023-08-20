@@ -3,7 +3,7 @@ import React from "react";
 
 interface CardProps {
   className?: string;
-  children: JSX.Element;
+  children: JSX.Element[] | JSX.Element;
 }
 
 export const Card: React.FC<CardProps> = ({ className, children }) => {
