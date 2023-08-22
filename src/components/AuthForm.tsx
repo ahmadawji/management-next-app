@@ -66,7 +66,7 @@ export const AuthForm = ({ mode }: { mode: "register" | "signin" }) => {
           <h2 className="text-3xl mb-2">{content.header}</h2>
           <p className="tex-lg text-black/25">{content.subheader}</p>
         </div>
-        <form onSubmit={handleSubmit} className="py-10 w-full">
+        <form onSubmit={handleSubmit} className="py-2 w-full">
           {mode === "register" && (
             <div className="flex mb-8 justify-between">
               <div className="pr-2">
