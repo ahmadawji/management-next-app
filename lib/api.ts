@@ -8,9 +8,9 @@ interface Fetcher {
 export const fetcher = async ({ url, method, body, json = true }: Fetcher) => {
   const res = await fetch(url, {
     method,
-    ...body(
-      body && { body: JSON.stringify(body) }
-    ) /*if body is there, then spread body*/,
+    ...(body && {
+      body: JSON.stringify(body),
+    }) /*if body is there, then spread body*/,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
