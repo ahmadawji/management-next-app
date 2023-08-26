@@ -17,7 +17,7 @@ export default function DashboardRootLayout({
     <html lang="en" className={clsx(inter.variable, "dark")}>
       <head />
       <body className="h-screen w-screen candy-mesh p-6">
-        <GlassPane className="w-full h-full flex items-center">
+        <GlassPane className="w-full h-full flex items-center gap-4 p-5">
           <Sidebar />
           {children}
         </GlassPane>
