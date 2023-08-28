@@ -36,7 +36,12 @@ export const validateJWT = async (jwt: string) => {
 export const getUserFromCookie = async (cookies: ReadonlyRequestCookies) => {
   const jwt = cookies.get(process.env.COOKIE_NAME as string);
 
-  const { id } = await validateJWT(jwt!.value);
+  const user = await getUserfromJWT(jwt!.value);
+  return user;
+};
+
+export const getUserfromJWT = async (jwt: string) => {
+  const { id } = await validateJWT(jwt);
 
   const user = await db.user.findUnique({
     where: {

@@ -40,13 +40,12 @@ export const AuthForm = ({ mode }: { mode: "register" | "signin" }) => {
         } else {
           await signin(formState);
         }
-
         setFormState(initialState);
-        router.replace("/home");
       } catch (e) {
         setError(`Could not ${mode}`);
       } finally {
         setFormState({ ...initialState });
+        router.replace("/home");
       }
     },
     [
