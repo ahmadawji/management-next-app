@@ -46,12 +46,14 @@ export const ProjectCard: FC<{ project: ProjectWithTask }> = ({ project }) => {
             className={clsx(
               "h-full text-center text-xs text-white bg-violet-600 rounded-full"
             )}
-            style={{ width: `${progress}%` }}
+            style={{
+              width: `${progress > 0 || progress === 0 ? progress : 0}%`,
+            }}
           ></div>
         </div>
         <div className="text-right">
           <span className="text-sm text-gray-600 font-semibold">
-            {progress}%
+            {progress > 0 || progress === 0 ? progress : 0}%
           </span>
         </div>
       </div>

@@ -35,3 +35,12 @@ export const register = async (user: Object) => {
 export const signin = async (user: Object) => {
   return fetcher({ url: "/api/signin", method: "POST", body: user });
 };
+
+export const createNewProject = async (name: string) => {
+  return fetcher({
+    url: "api/project",
+    method: "POST",
+    body: { name },
+    json: true,
+  });
+};

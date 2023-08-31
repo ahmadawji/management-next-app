@@ -25,7 +25,7 @@ export const TaskCard = async ({
   title,
   tasks,
 }: {
-  title: string;
+  title?: string;
   tasks?: Task[];
 }) => {
   const tasksData = tasks || (await getTasks());
